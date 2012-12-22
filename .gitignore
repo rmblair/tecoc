@@ -1,0 +1,7 @@
+*.[oa]
+bin/Make
+bin/inspect
+bin/mung
+bin/teco
+bin/tecoc
+src/tecoc
