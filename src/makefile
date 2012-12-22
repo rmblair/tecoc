@@ -56,7 +56,7 @@ tecoc: tecoc.o ${OBJECTS}
 tecoc.o: tecoc.c zport.h tecoc.h deferr.h dchars.h chmacs.h
 
 clpars.h: genclp clpars.tec
-	genclp
+	./genclp
 
 genclp: genclp.o
 	${LINK.c} -o $@ genclp.o
@@ -67,7 +67,7 @@ clean:
 	@for i in makedep? ${OBJECTS} ; do \
 		if [ -f $$i ] ; then rm $$i ; fi ; \
 	done
-	rm -f tecoc tecoc.o core
+	rm -f tecoc tecoc.o core *.o
 
 tags:
 	etags *.c *.h
