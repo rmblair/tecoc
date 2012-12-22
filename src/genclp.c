@@ -4,15 +4,9 @@
 ***************************************************************************/
 
 #ifdef sun
-void	exit();			/* exit the program */
-int	puts();			/* write string to stdout, with newline */
-void	perror();		/* write a message on stdout */
-int	fputs();		/* put string to a given stream */
-int	fclose();		/* close a stream */
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
 #else
-#include <stdlib.h>		/* define prototype for exit() */
 #ifdef vax11c
 #define EXIT_SUCCESS 1
 #define EXIT_FAILURE 2
@@ -20,6 +14,7 @@ int	fclose();		/* close a stream */
 #endif
 #include <stdio.h>		/* define prototypes for fopen(), etc. */
 #include <string.h>		/* define prototype for strcpy */
+#include <stdlib.h>		/* define prototype for exit() */
 
 #ifndef FALSE
 #define FALSE (1==0)
