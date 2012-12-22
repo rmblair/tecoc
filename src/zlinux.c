@@ -50,8 +50,6 @@ char 	*tgetstr();		/* get str value of a terminal capability */
 
 static int vernum();		/* see bottom of this file */
 
-extern	int sys_nerr;		/* number of system error messages */
-
 static	int SupGotCtC = 0;
 
 static glob_t pglob;
@@ -99,8 +97,7 @@ system and imbedded in a TECO-style message with the SYS mnemonic.
 
 static VVOID ZErMsg()
 {
-	if (errno < sys_nerr)
-		ErrStr(ERR_SYS, sys_errlist[errno]);
+	ErrStr(ERR_SYS, strerror(errno));
 }
 
 /*****************************************************************************
