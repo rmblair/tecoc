@@ -120,9 +120,9 @@ code files which explicitly #include these header files.
 
 #if (CHECKSUM_CODE || CONSISTENCY_CHECKING || DEBUGGING)
 #if defined(unix)
-extern int printf();
+/*extern int printf();*/
 /*extern int sprintf();*/
-extern int puts();
+/*extern int puts();*/
 #else
 #include <stdio.h>
 #include <stdlib.h>
