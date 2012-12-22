@@ -123,6 +123,9 @@ code files which explicitly #include these header files.
 /*extern int printf();*/
 /*extern int sprintf();*/
 /*extern int puts();*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #else
 #include <stdio.h>
 #include <stdlib.h>
