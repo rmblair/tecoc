@@ -51,7 +51,7 @@ CFILES=	baksrc.c bldstr.c clenup.c cmatch.c docjr.c doeves.c doflag.c \
 OBJECTS= $(CFILES:.c=.o)
 
 tecoc: tecoc.o ${OBJECTS}
-	${LINK.c} -s -o $@ tecoc.o ${OBJECTS} ${TERMOBJS}
+	${CC} -s -o $@ tecoc.o ${OBJECTS} ${TERMOBJS}
 
 tecoc.o: tecoc.c zport.h tecoc.h deferr.h dchars.h chmacs.h
 
@@ -59,7 +59,7 @@ clpars.h: genclp clpars.tec
 	./genclp
 
 genclp: genclp.o
-	${LINK.c} -o $@ genclp.o
+	${CC} -o $@ genclp.o
 
 genclp.o: genclp.c
 
@@ -67,7 +67,7 @@ clean:
 	@for i in makedep? ${OBJECTS} ; do \
 		if [ -f $$i ] ; then rm $$i ; fi ; \
 	done
-	rm -f tecoc tecoc.o core *.o
+	rm -f tecoc tecoc.o core genclp genclp.o clpars.h *.o
 
 tags:
 	etags *.c *.h
